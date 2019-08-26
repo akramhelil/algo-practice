@@ -22,7 +22,14 @@ function palindrome(str) {
         reversed = char + reversed
     }
     return reversed === str ? true : false;
-    }
+
+     // solution 2
+    //  return str.split('').every((char,i) => {
+    //     return char === str[str.length - i - 1]
+    // })
+}
+    
+
 
 reverse('Akram Helil')
 
