@@ -1,0 +1,19 @@
+{
+  "name": "algo-personal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "algo-practice.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akramhelil/algo-practice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akramhelil/algo-practice/issues"
+  },
+  "homepage": "https://github.com/akramhelil/algo-practice#readme"
+}
