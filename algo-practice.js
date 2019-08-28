@@ -14,7 +14,7 @@ function reverse(str) {
     return console.log(reversed);
 }
 
-
+// check the word is palindrome or not
 function palindrome(str) {
     //  my solution 
     let reversed = '';
@@ -28,9 +28,28 @@ function palindrome(str) {
     //     return char === str[str.length - i - 1]
     // })
 }
-    
 
 
-reverse('Akram Helil')
+// Reverse a integer for including the negative numbers
+function reverseInt(n) {
+    //my solutuon 
+    // let reversed = n.toString().split('').reverse('').join('');
+    // if (n < 0) {
+    //     return parseInt(reversed) * -1;
+    // }
+    // return parseInt(reversed);
+
+    // solutution 1 
+    const reversed = n 
+        .toString()
+        .split('')
+        .reverse()
+        .join('')
+    return parseInt(reversed) * Math.sign(n)
+}
+
+
+
+
 
 
