@@ -127,19 +127,29 @@ function chunk(array, size) {
     return chunked;
 
     // solution 2 
-    // const chunked = [];
-     // for (let el of array) {
-    //     const last = chunked[chunked.length - 1]
+    const chunked = [];
+     for (let el of array) {
+        const last = chunked[chunked.length - 1]
 
-    //     if (!last || last.length === size) {
-    //         chunked.push([el])
-    //     } else {
-    //         last.push(el)
-    //     }
-    // }
-    // return chunked;
+        if (!last || last.length === size) {
+            chunked.push([el])
+        } else {
+            last.push(el)
+        }
+    }
+    return chunked;
 
-    
+    // solution 3  with Slice utilizing the index 
+    const chunked = [];
+    let index = 0;
+
+    while (index < array.length) {
+        let sliced = array.slice(index, index + size)
+        chunked.push(sliced)
+        index += size
+    }
+    return chunked;
+
  }
 
 
