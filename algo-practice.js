@@ -49,6 +49,17 @@ function reverseInt(n) {
     return parseInt(reversed) * Math.sign(n)
 }
 
+//  return the character that used the most in the string 
+
+
+// What is the most common character in the string? 
+// Dose String A have the same chatacters as string B(is iy an anagram?)
+// Dose the given string have any repeated chatacters in it? )
+function maxChar(str) {
+    // my solution 
+}
+
+
 
 
 
