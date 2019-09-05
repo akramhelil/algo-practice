@@ -111,7 +111,9 @@ function fizzBuzz(num) {
     }
 }
 
- // Given an array and chunk size, divide the array into many subarrays
+ // Given an array and size attribute, group the array with the number of a size as a sub array.
+// eg.  
+
 function chunk(array, size) {
     // solution one 
     const chunked = []
