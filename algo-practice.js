@@ -40,11 +40,12 @@ function reverseInt(n) {
     // return parseInt(reversed);
 
     // solutution 1 
-    const reversed = n 
+    const reversed = n
         .toString()
         .split('')
         .reverse()
-        .join('')
+        .join('');
+     // Math.sign() will detect the number is negative or positive 
     return parseInt(reversed) * Math.sign(n)
 }
 
