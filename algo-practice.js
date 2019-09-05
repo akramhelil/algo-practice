@@ -111,6 +111,37 @@ function fizzBuzz(num) {
     }
 }
 
+ // Given an array and chunk size, divide the array into many subarrays
+function chunk(array, size) {
+    // solution one 
+    const chunked = []
+    
+    array.forEach(el => {
+        const lastElChunked = chunked[chunked.length - 1]
+        if (!lastElChunked || lastElChunked.length === size) {
+            chunked.push([el])
+        } else {
+            lastElChunked.push(el)
+        }
+    })
+    return chunked;
+
+    // solution 2 
+    // const chunked = [];
+     // for (let el of array) {
+    //     const last = chunked[chunked.length - 1]
+
+    //     if (!last || last.length === size) {
+    //         chunked.push([el])
+    //     } else {
+    //         last.push(el)
+    //     }
+    // }
+    // return chunked;
+
+    
+ }
+
 
 
 
