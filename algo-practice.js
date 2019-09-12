@@ -1,11 +1,11 @@
 // reverse a string
 function reverse(str) {
     // solution one 
-    // let reversed = "";
-    // for (let char of str) {
-    //     reversed = char + reversed;
-    // }
-    // return console.log(reversed);
+    let reversed = "";
+    for (let char of str) {
+        reversed = char + reversed;
+    }
+    return console.log(reversed);
     
     // solution two
     const reversed =  str.split('')
@@ -98,7 +98,7 @@ function maxChar(str) {
 // FIZBUZZZZZ 
 function fizzBuzz(num) {
     // my solution  modulo operator % 
-    for (let i = 1; i <= n; i++){
+    for (let i = 1; i <= num; i++){
         if (i % 3 === 0 && i % 5 === 0) {
             console.log('fizzbuzz')
         } else if (i % 3 === 0) {
@@ -112,45 +112,54 @@ function fizzBuzz(num) {
 }
 
  // Given an array and size attribute, group the array with the number of a size as a sub array.
-// eg.  
+// eg.   chunk([1, 2, 3, 4], 2) --> [[ 1, 2], [3, 4]]
+// chunk([1, 2, 3, 4, 5], 2) --> [[ 1, 2], [3, 4], [5]]
+// chunk([1, 2, 3, 4, 5, 6, 7, 8], 3) --> [[ 1, 2, 3], [4, 5, 6], [7, 8]]
+// chunk([1, 2, 3, 4, 5], 4) --> [[ 1, 2, 3, 4], [5]]
+// chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
+
 
 function chunk(array, size) {
-    // solution one 
-    const chunked = []
+    // // solution one 
+    // const chunked = []
     
-    array.forEach(el => {
-        const lastElChunked = chunked[chunked.length - 1]
-        if (!lastElChunked || lastElChunked.length === size) {
-            chunked.push([el])
-        } else {
-            lastElChunked.push(el)
-        }
-    })
-    return chunked;
+    // array.forEach(el => {
+    //     const lastElChunked = chunked[chunked.length - 1]
+    //     if (!lastElChunked || lastElChunked.length === size) {
+    //         chunked.push([el])
+    //     } else {
+    //         lastElChunked.push(el)
+    //     }
+    // })
+    // return chunked;
 
-    // solution 2 
-    const chunked = [];
-     for (let el of array) {
-        const last = chunked[chunked.length - 1]
 
-        if (!last || last.length === size) {
-            chunked.push([el])
-        } else {
-            last.push(el)
-        }
-    }
-    return chunked;
 
-    // solution 3  with Slice utilizing the index 
-    const chunked = [];
-    let index = 0;
+    // // solution 2 
+    // const chunked = [];
+    //  for (let el of array) {
+    //     const last = chunked[chunked.length - 1]
 
-    while (index < array.length) {
-        let sliced = array.slice(index, index + size)
-        chunked.push(sliced)
-        index += size
-    }
-    return chunked;
+    //     if (!last || last.length === size) {
+    //         chunked.push([el])
+    //     } else {
+    //         last.push(el)
+    //     }
+    // }
+    // return chunked;
+
+
+    
+    // // solution 3  with Slice utilizing the index 
+    // const chunked = [];
+    // let index = 0;
+
+    // while (index < array.length) {
+    //     let sliced = array.slice(index, index + size)
+    //     chunked.push(sliced)
+    //     index += size
+    // }
+    // return chunked;
 
  }
 
