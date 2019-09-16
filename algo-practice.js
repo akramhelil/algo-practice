@@ -24,20 +24,20 @@ function palindrome(str) {
     return reversed === str ? true : false;
 
      // solution 2
-    //  return str.split('').every((char,i) => {
-    //     return char === str[str.length - i - 1]
-    // })
+     return str.split('').every((char,i) => {
+        return char === str[str.length - i - 1]
+    })
 }
 
 
 // Reverse a integer for including the negative numbers
 function reverseInt(n) {
     //my solutuon 
-    // let reversed = n.toString().split('').reverse('').join('');
-    // if (n < 0) {
-    //     return parseInt(reversed) * -1;
-    // }
-    // return parseInt(reversed);
+    let reversed = n.toString().split('').reverse('').join('');
+    if (n < 0) {
+        return parseInt(reversed) * -1;
+    }
+    return parseInt(reversed);
 
     // solutution 1 
     const reversed = n
@@ -58,27 +58,27 @@ function reverseInt(n) {
 function maxChar(str) {
 
     // my solution 
-       // const charObj = {};
-    // let max = 0 
-    // let maxChar = ''
+       const charObj = {};
+    let max = 0 
+    let maxChar = ''
 
     // // transfer the string to an object depends on the how many times the character showed up in the string
-    // for (let char of str) {
-    //     if (charObj[char]) {
-    //         charObj[char] ++;
-    //     } else {
-    //         charObj[char] = 1;   
-    //   }
-    // }
+    for (let char of str) {
+        if (charObj[char]) {
+            charObj[char] ++;
+        } else {
+            charObj[char] = 1;   
+      }
+    }
 
     // // loop through the obj and find the max value of the obj.
-    // for (let obj in charObj) {
-    //     if (charObj[obj] > max) {
-    //         max = charObj[obj]
-    //         maxChar = obj;
-    //     }
-    // }
-    // return maxChar;
+    for (let obj in charObj) {
+        if (charObj[obj] > max) {
+            max = charObj[obj]
+            maxChar = obj;
+        }
+    }
+    return maxChar;
 
     // solution 2
     let max = 0;
@@ -123,45 +123,84 @@ function chunk(array, size) {
     // // solution one 
     // const chunked = []
     
-    // array.forEach(el => {
-    //     const lastElChunked = chunked[chunked.length - 1]
-    //     if (!lastElChunked || lastElChunked.length === size) {
-    //         chunked.push([el])
-    //     } else {
-    //         lastElChunked.push(el)
-    //     }
-    // })
-    // return chunked;
+    array.forEach(el => {
+        const lastElChunked = chunked[chunked.length - 1]
+        if (!lastElChunked || lastElChunked.length === size) {
+            chunked.push([el])
+        } else {
+            lastElChunked.push(el)
+        }
+    })
+    return chunked;
 
 
 
     // // solution 2 
-    // const chunked = [];
-    //  for (let el of array) {
-    //     const last = chunked[chunked.length - 1]
+    const chunked = [];
+     for (let el of array) {
+        const last = chunked[chunked.length - 1]
 
-    //     if (!last || last.length === size) {
-    //         chunked.push([el])
-    //     } else {
-    //         last.push(el)
-    //     }
-    // }
-    // return chunked;
+        if (!last || last.length === size) {
+            chunked.push([el])
+        } else {
+            last.push(el)
+        }
+    }
+    return chunked;
 
 
     
     // // solution 3  with Slice utilizing the index 
-    // const chunked = [];
-    // let index = 0;
+    const chunked = [];
+    let index = 0;
 
-    // while (index < array.length) {
-    //     let sliced = array.slice(index, index + size)
-    //     chunked.push(sliced)
-    //     index += size
-    // }
-    // return chunked;
+    while (index < array.length) {
+        let sliced = array.slice(index, index + size)
+        chunked.push(sliced)
+        index += size
+    }
+    return chunked;
 
  }
+
+
+//  Check to see if two provided strings are anagrams of eachother.
+// Check to see if two provided strings are anagrams of eachother.
+// One string is an anagram of another if it uses the same characters
+// in the same quantity. Only consider characters, not spaces
+// or punctuation.  Consider capital letters to be the same as lower case
+
+// soluction 1 
+function anagrams(stringA, stringB) {
+    // create cahrctor map for both strings 
+    // build a helper function to make char map 
+    const aCharMap = buildCharMap(stringA);
+    const bCharMap = buildCharMap(stringB);
+
+    if (Object.keys(aCharMap).length !== Object.keys(bCharMap).length) {
+        return false;
+    }
+
+    for (let char in aCharMap) {
+        if (aCharMap[char] !== bCharMap[char]) {
+            return false;
+        }
+    }
+
+    return true;
+
+}
+
+function buildCharMap(str) {
+    const charMap = {}
+
+    for (let char of str.replace(/[^\w]/g, '').toLowerCase()) {
+        charMap[char] = charMap[char] + 1 || 1;
+    }
+    return charMap;
+} 
+
+/* --------------------------------------------------------*/
 
 
 
