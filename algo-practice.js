@@ -200,6 +200,20 @@ function buildCharMap(str) {
     return charMap;
 } 
 
+
+// solution # 2
+function anagrams(stringA, stringB) { 
+    // Solution # 2 
+    if (cleanString(stringA) === cleanString(stringB)) {
+        return true
+    } else return false;
+}
+
+// helper function 
+function cleanString(str) {
+    return str.replace(/[^\w]/, '').toLowerCase().split('').sort().join('');
+}
+
 /* --------------------------------------------------------*/
 
 
