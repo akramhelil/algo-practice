@@ -262,6 +262,27 @@ function steps(n) {
         }
         console.log(stair)
     }
+
+    //  recursion solution 
+    let row = 0; 
+    let stair = '';
+
+    if (n === row) {
+        return; 
+    }
+
+    if (n === stair.length) {
+        console.log(stair)
+        row++
+        return step(n)
+    }
+
+    if (stair.length <= row) {
+        stair += '#'
+    } else {
+        stair += ' '
+    }
+    stair(n )
 }
 
 
