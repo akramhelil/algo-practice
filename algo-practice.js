@@ -303,8 +303,16 @@ function validate(node, min = null, max = null) {
     if (min !== null && node.data < min) {
         return false;
     }
+    //  Validate funtion calls will be the one that will do the recursive funtion calls 
+    if (node.left && !validate(node.left, min, node.data)) {
+        return false;
+    }
 
-    
+    if (node.right && !vaildate(node.right, node.data, max)) {
+        return false;
+    }
+
+    return true;
 }
 
 
