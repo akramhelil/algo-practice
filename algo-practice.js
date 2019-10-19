@@ -104,7 +104,7 @@ function fizzBuzz(num) {
         } else if (i % 3 === 0) {
             console.log('fizz')
         } else if (i % 5 === 0) {
-            console.log('buzz')
+            console.log('bu-zz')
         } else {
             console.log(i)
         }
@@ -229,6 +229,7 @@ function capitalize(str) {
     return words.join(' ')
 }
 
+
 // Write a function that accepts a positive number N.
 // The function should console log a step shape
 // with N levels using the # character.  Make sure the
@@ -283,6 +284,27 @@ function steps(n) {
         stair += ' '
     }
     stair(n )
+}
+
+
+// --- Directions
+// Given a node, validate the binary search tree,
+// ensuring that every node's left hand child is
+// less than the parent node's value, and that
+// every node's right hand child is greater than
+// the parent
+
+function validate(node, min = null, max = null) {
+    // recursion to pass through  the information 
+    if (max !== null && node.data > max) {
+        return false;
+    }
+
+    if (min !== null && node.data < min) {
+        return false;
+    }
+
+    
 }
 
 
