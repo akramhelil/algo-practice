@@ -16,6 +16,7 @@ function reverse(str) {
 
 // check the word is palindrome or not
 function palindrome(str) {
+    
     //  my solution 
     let reversed = '';
     for (let char of str) {
