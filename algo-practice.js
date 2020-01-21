@@ -403,6 +403,16 @@ function vowels(str) {
     return count;
 }
 
+function vowels(str) {
+    // regular expression - kinda cheating lol '
+    // use string match method  
+    // regex /[]/ square bracet will pull out the letters inside of the string that
+    // include those letters and return an array of those letters. 
+    const matches = str.match(/[aeiou]/gi)
+
+    return matches ? matches.length : 0
+}
+
 
 
 
