@@ -14,6 +14,8 @@ function reverse(str) {
     return console.log(reversed);
 }
 
+
+
 // check the word is palindrome or not
 function palindrome(str) {
     
@@ -315,6 +317,9 @@ function validate(node, min = null, max = null) {
 
     return true;
 }
+
+
+
 
 
 
